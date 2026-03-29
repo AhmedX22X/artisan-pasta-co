@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Artisan Italian Pasta - Handcrafted with tradition, served with passion">
+    <meta name="keywords" content="pasta, italian food, artisan pasta, gourmet pasta, fresh pasta">
+    <meta name="author" content="Artisan Pasta Co.">
+    <meta property="og:title" content="Artisan Pasta Co. - Taste of Italy">
+    <meta property="og:description" content="Experience authentic Italian pasta made with the finest ingredients">
+    <meta property="og:image" content="pasta.jpg">
+    <meta property="og:type" content="product">
+    <meta name="theme-color" content="#D9381E">
+    <title>Artisan Pasta Co. | Premium Italian Pasta</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Artisan Spaghetti with Tomato Basil Sauce",
+        "image": "pasta.jpg",
+        "description": "Handcrafted Italian pasta with fresh tomato sauce, basil, and aged parmesan",
+        "brand": {
+            "@type": "Brand",
+            "name": "Artisan Pasta Co."
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "24.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-content">
+            <div class="loader-pasta">
+                <div class="loader-noodle"></div>
+                <div class="loader-noodle"></div>
+                <div class="loader-noodle"></div>
+            </div>
+            <div class="loader-text">
+                <span class="loader-letter">A</span>
+                <span class="loader-letter">r</span>
+                <span class="loader-letter">t</span>
+                <span class="loader-letter">i</span>
+                <span class="loader-letter">s</span>
+                <span class="loader-letter">a</span>
+                <span class="loader-letter">n</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#" class="brand-logo">
+                    <i class="fas fa-utensils"></i>
+                    <span class="brand-text">Artisan<span class="gold-text">Pasta</span></span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <span>Home</span>
+                            <div class="link-underline"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">
+                            <span>Features</span>
+                            <div class="link-underline"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#specs" class="nav-link">
+                            <span>Specifications</span>
+                            <div class="link-underline"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testimonials" class="nav-link">
+                            <span>Reviews</span>
+                            <div class="link-underline"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <span>Contact</span>
+                            <div class="link-underline"></div>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="nav-icon-btn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="nav-icon-btn" aria-label="Cart">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">2</span>
+                    </button>
+                    <a href="#order" class="btn-primary nav-cta">
+                        Order Now
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-gradient"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge reveal-up">
+                    <span class="badge-icon"><i class="fas fa-award"></i></span>
+                    <span class="badge-text">Award Winning Recipe 2024</span>
+                </div>
+                
+                <h1 class="hero-title reveal-up delay-1">
+                    <span class="title-line">Taste the</span>
+                    <span class="title-line highlight">Tradition</span>
+                    <span class="title-line">of Italy</span>
+                </h1>
+                
+                <p class="hero-description reveal-up delay-2">
+                    Experience the authentic flavors of handmade Italian pasta, 
+                    crafted with generations of expertise and the freshest ingredients. 
+                    Every strand tells a story of passion and perfection.
+                </p>
+                
+                <div class="hero-stats reveal-up delay-3">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="150">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-label">Years of Tradition</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-suffix">k</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-suffix">%</span>
+                        <span class="stat-label">Natural Ingredients</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons reveal-up delay-4">
+                    <a href="#order" class="btn-primary btn-large">
+                        <span>Order Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="btn-shine"></div>
+                    </a>
+                    <button class="btn-secondary btn-large" id="watchVideo">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch Story</span>
+                    </button>
+                </div>
+                
+                <div class="hero-trust reveal-up delay-5">
+                    <div class="trust-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free Shipping</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fresh Guarantee</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-image-container reveal-scale">
+                    <div class="image-glow"></div>
+                    <div class="image-border"></div>
+                    <img src="pasta.jpg" alt="Artisan Pasta with Tomato Basil Sauce" class="hero-image" id="heroImage">
+                    
+                    <!-- Floating Elements -->
+                    <div class="floating-element float-1">
+                        <div class="float-card">
+                            <i class="fas fa-leaf"></i>
+                            <span>Fresh Basil</span>
+                        </div>
+                    </div>
+                    <div class="floating-element float-2">
+                        <div class="float-card">
+                            <i class="fas fa-fire"></i>
+                            <span>Handmade</span>
+                        </div>
+                    </div>
+                    <div class="floating-element float-3">
+                        <div class="float-card rating-card">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Decorative Circles -->
+                <div class="decor-circle circle-1"></div>
+                <div class="decor-circle circle-2"></div>
+                <div class="decor-circle circle-3"></div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle reveal-up">Why Choose Us</span>
+                <h2 class="section-title reveal-up">
+                    Crafted with <span class="gold-text">Passion</span>
+                </h2>
+                <p class="section-description reveal-up">
+                    Every dish is a masterpiece, created using time-honored techniques 
+                    and the finest ingredients sourced from Italy's best producers.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card reveal-up">
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-wheat-awn"></i>
+                        </div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="feature-title">Premium Wheat</h3>
+                    <p class="feature-text">
+                        Sourced from the finest durum wheat fields in Italy, ensuring 
+                        the perfect texture and golden color in every bite.
+                    </p>
+                    <div class="feature-link">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card reveal-up delay-1">
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="feature-title">Handmade Daily</h3>
+                    <p class="feature-text">
+                        Our skilled artisans hand-roll and cut each pasta strand 
+                        using traditional techniques passed down through generations.
+                    </p>
+                    <div class="feature-link">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card reveal-up delay-2">
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="feature-title">Organic Ingredients</h3>
+                    <p class="feature-text">
+                        100% organic tomatoes, fresh basil, and aged parmesan 
+                        create an authentic taste that's both healthy and delicious.
+                    </p>
+                    <div class="feature-link">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card reveal-up">
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="feature-title">Slow Cooked</h3>
+                    <p class="feature-text">
+                        Our signature tomato sauce simmers for 8 hours to develop 
+                        rich, complex flavors that define true Italian cuisine.
+                    </p>
+                    <div class="feature-link">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card reveal-up delay-1">
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="feature-title">Flash Frozen</h3>
+                    <p class="feature-text">
+                        Immediately frozen at peak freshness to lock in flavor 
+                        and nutrients, delivering restaurant quality to your home.
+                    </p>
+                    <div class="feature-link">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card reveal-up delay-2">
+                    <div class="feature-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="feature-title">Express Delivery</h3>
+                    <p class="feature-text">
+                        Temperature-controlled shipping ensures your pasta arrives 
+                        in perfect condition, ready to cook in minutes.
+                    </p>
+                    <div class="feature-link">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs Section -->
+    <section class="specs" id="specs">
+        <div class="container">
+            <div class="specs-wrapper">
+                <div class="specs-content">
+                    <span class="section-subtitle reveal-up">Technical Details</span>
+                    <h2 class="section-title reveal-up">
+                        Nutritional <span class="gold-text">Excellence</span>
+                    </h2>
+                    
+                    <div class="specs-tabs">
+                        <button class="spec-tab active" data-tab="nutrition">
+                            <i class="fas fa-apple-whole"></i>
+                            <span>Nutrition</span>
+                        </button>
+                        <button class="spec-tab" data-tab="ingredients">
+                            <i class="fas fa-list-check"></i>
+                            <span>Ingredients</span>
+                        </button>
+                        <button class="spec-tab" data-tab="cooking">
+                            <i class="fas fa-fire-burner"></i>
+                            <span>Cooking</span>
+                        </button>
+                    </div>
+                    
+                    <div class="specs-panels">
+                        <!-- Nutrition Panel -->
+                        <div class="spec-panel active" id="nutrition">
+                            <div class="nutrition-grid">
+                                <div class="nutrition-item reveal-left">
+                                    <div class="nutrition-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="nutrition-info">
+                                        <span class="nutrition-value">420</span>
+                                        <span class="nutrition-label">Calories</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-item reveal-left delay-1">
+                                    <div class="nutrition-icon">
+                                        <i class="fas fa-drumstick-bite"></i>
+                                    </div>
+                                    <div class="nutrition-info">
+                                        <span class="nutrition-value">18g</span>
+                                        <span class="nutrition-label">Protein</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-item reveal-left delay-2">
+                                    <div class="nutrition-icon">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <div class="nutrition-info">
+                                        <span class="nutrition-value">65g</span>
+                                        <span class="nutrition-label">Carbs</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-item reveal-left delay-3">
+                                    <div class="nutrition-icon">
+                                        <i class="fas fa-oil-well"></i>
+                                    </div>
+                                    <div class="nutrition-info">
+                                        <span class="nutrition-value">8g</span>
+                                        <span class="nutrition-label">Fat</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="nutrition-details reveal-up">
+                                <h4>Detailed Nutritional Information (per serving)</h4>
+                                <ul class="nutrition-list">
+                                    <li>
+                                        <span>Sodium</span>
+                                        <span>580mg (25% DV)</span>
+                                    </li>
+                                    <li>
+                                        <span>Fiber</span>
+                                        <span>4g (14% DV)</span>
+                                    </li>
+                                    <li>
+                                        <span>Sugar</span>
+                                        <span>8g</span>
+                                    </li>
+                                    <li>
+                                        <span>Calcium</span>
+                                        <span>150mg (12% DV)</span>
+                                    </li>
+                                    <li>
+                                        <span>Iron</span>
+                                        <span>3mg (15% DV)</span>
+                                    </li>
+                                    <li>
+                                        <span>Vitamin C</span>
+                                        <span>12mg (20% DV)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Ingredients Panel -->
+                        <div class="spec-panel" id="ingredients">
+                            <div class="ingredients-list reveal-up">
+                                <div class="ingredient-category">
+                                    <h4>Pasta</h4>
+                                    <ul>
+                                        <li>Durum Wheat Semolina</li>
+                                        <li>Organic Eggs</li>
+                                        <li>Purified Water</li>
+                                        <li>Semolina (for dusting)</li>
+                                    </ul>
+                                </div>
+                                <div class="ingredient-category">
+                                    <h4>Tomato Sauce</h4>
+                                    <ul>
+                                        <li>San Marzano Tomatoes</li>
+                                        <li>Extra Virgin Olive Oil</li>
+                                        <li>Fresh Garlic</li>
+                                        <li>Fresh Basil Leaves</li>
+                                        <li>Sea Salt</li>
+                                        <li>Black Pepper</li>
+                                    </ul>
+                                </div>
+                                <div class="ingredient-category">
+                                    <h4>Garnish</h4>
+                                    <ul>
+                                        <li>Parmigiano-Reggiano (24 months aged)</li>
+                                        <li>Fresh Basil</li>
+                                        <li>Extra Virgin Olive Oil</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="allergen-info reveal-up">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Allergen Information</h4>
+                                <p>Contains: Wheat, Eggs, Milk. May contain traces of nuts.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Cooking Panel -->
+                        <div class="spec-panel" id="cooking">
+                            <div class="cooking-steps reveal-up">
+                                <div class="cooking-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Boil Water</h4>
+                                        <p>Bring a large pot of salted water to a rolling boil. Use 1 tablespoon of salt per liter.</p>
+                                    </div>
+                                </div>
+                                <div class="cooking-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Cook Pasta</h4>
+                                        <p>Add pasta and cook for 8-10 minutes, stirring occasionally, until al dente.</p>
+                                    </div>
+                                </div>
+                                <div class="cooking-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Heat Sauce</h4>
+                                        <p>While pasta cooks, heat the tomato sauce in a separate pan over medium heat for 3-4 minutes.</p>
+                                    </div>
+                                </div>
+                                <div class="cooking-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Combine</h4>
+                                        <p>Drain pasta, reserving 1 cup of pasta water. Toss pasta with sauce, adding pasta water as needed.</p>
+                                    </div>
+                                </div>
+                                <div class="cooking-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h4>Serve</h4>
+                                        <p>Plate immediately, garnish with fresh basil and freshly grated Parmigiano-Reggiano.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="specs-visual reveal-scale">
+                    <div class="specs-image-container">
+                        <div class="image-shimmer"></div>
+                        <img src="pasta.jpg" alt="Pasta Ingredients" class="specs-image">
+                        <div class="specs-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-award"></i>
+                                <span>Certified Organic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle reveal-up">Testimonials</span>
+                <h2 class="section-title reveal-up">
+                    What Our <span class="gold-text">Customers</span> Say
+                </h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card reveal-up">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Maria Rossi">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Maria Rossi</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Absolutely divine! The pasta has the perfect texture and the sauce tastes like my nonna used to make. I've tried many premium pasta brands, but this is truly exceptional."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <span class="verified-badge">
+                            <i class="fas fa-check-circle"></i> Verified Purchase
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card reveal-up delay-1">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=3" alt="James Mitchell">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>James Mitchell</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"As a chef, I'm very particular about ingredients. The quality of this pasta rivals what we use in our restaurant. The fresh basil and aged parmesan make all the difference."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <span class="verified-badge">
+                            <i class="fas fa-check-circle"></i> Verified Purchase
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card reveal-up delay-2">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Sofia Bianchi">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Sofia Bianchi</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Finally, authentic Italian pasta delivered to my doorstep! The packaging keeps everything fresh, and cooking instructions are perfect. My family loves it!"</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <span class="verified-badge">
+                            <i class="fas fa-check-circle"></i> Verified Purchase
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card reveal-up">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=8" alt="David Chen">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>David Chen</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The convenience without compromising on quality. I order this monthly and it never disappoints. The tomato sauce is rich and flavorful - simply outstanding!"</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <span class="verified-badge">
+                            <i class="fas fa-check-circle"></i> Verified Purchase
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card reveal-up delay-1">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=9" alt="Emma Thompson">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Emma Thompson</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Worth every penny! The attention to detail is remarkable. From the handmade pasta to the perfectly aged cheese, you can taste the quality in every bite."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <span class="verified-badge">
+                            <i class="fas fa-check-circle"></i> Verified Purchase
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card reveal-up delay-2">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="Marco Ferrari">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>Marco Ferrari</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Being Italian, I'm very critical of pasta. This is the real deal! Reminds me of home. The basil is fresh, the sauce is perfect. Bravissimo!"</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <span class="verified-badge">
+                            <i class="fas fa-check-circle"></i> Verified Purchase
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-stats reveal-up">
+                <div class="stat-box">
+                    <span class="stat-big">4.9</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-big">2,847</span>
+                    <span class="stat-label">Reviews</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-big">98%</span>
+                    <span class="stat-label">Would Recommend</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="order">
+        <div class="cta-container">
+            <div class="cta-bg-pattern"></div>
+            <div class="cta-content">
+                <div class="cta-badge reveal-up">
+                    <i class="fas fa-percentage"></i>
+                    <span>Limited Time Offer</span>
+                </div>
+                
+                <h2 class="cta-title reveal-up">
+                    Ready to Taste <span class="gold-text">Perfection</span>?
+                </h2>
+                
+                <p class="cta-description reveal-up">
+                    Order now and get 20% off your first order plus free express shipping. 
+                    Join thousands of satisfied customers who've discovered the true taste of Italy.
+                </p>
+                
+                <div class="cta-offer reveal-up">
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="offer-details">
+                            <span class="offer-title">First Order Bonus</span>
+                            <span class="offer-text">Free recipe book + cooking guide</span>
+                        </div>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="offer-details">
+                            <span class="offer-title">Express Shipping</span>
+                            <span class="offer-text">Free delivery on orders over $50</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="cta-form reveal-up" id="orderForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email" required class="form-input">
+                        <button type="submit" class="btn-primary btn-large">
+                            <span>Get 20% Off</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <p class="form-note">
+                        <i class="fas fa-lock"></i> We respect your privacy. Unsubscribe anytime.
+                    </p>
+                </form>
+                
+                <div class="cta-trust reveal-up">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-undo"></i>
+                        <span>30-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-visual reveal-scale">
+                <div class="cta-image-wrapper">
+                    <div class="image-glow"></div>
+                    <img src="pasta.jpg" alt="Order Now" class="cta-image">
+                    <div class="price-tag">
+                        <span class="price-old">$34.99</span>
+                        <span class="price-new">$24.99</span>
+                        <span class="price-save">Save 28%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Brand Column -->
+                    <div class="footer-brand">
+                        <a href="#" class="footer-logo">
+                            <i class="fas fa-utensils"></i>
+                            <span>Artisan<span class="gold-text">Pasta</span></span>
+                        </a>
+                        <p class="footer-desc">
+                            Bringing the authentic taste of Italy to your table since 1874. 
+                            Every strand of pasta tells a story of tradition, quality, and passion.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#specs">Specifications</a></li>
+                            <li><a href="#testimonials">Reviews</a></li>
+                            <li><a href="#order">Order Now</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Products -->
+                    <div class="footer-links">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="#">Spaghetti</a></li>
+                            <li><a href="#">Penne</a></li>
+                            <li><a href="#">Fettuccine</a></li>
+                            <li><a href="#">Ravioli</a></li>
+                            <li><a href="#">Lasagna</a></li>
+                            <li><a href="#">Gift Sets</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact -->
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Via Roma 123, 00184 Rome, Italy</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+39 06 1234 5678</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@artisanpasta.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe for recipes, tips, and exclusive offers.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Artisan Pasta Co. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<div class="chatbot-toggle" id="chatbot-toggle">💬</div>
+
+<div class="chatbot-container" id="chatbot-container">
+  <div class="chatbot-header">
+    <h3>Pasta Assistant</h3>
+    <button id="chatbot-close" type="button">✕</button>
+  </div>
+
+  <div class="chatbot-messages" id="chatbot-messages">
+    <div class="bot-message">Hi — ready to order pasta? 🍝</div>
+  </div>
+
+  <form class="chatbot-input-area" id="chatbot-form">
+    <input
+      type="text"
+      id="chatbot-input"
+      placeholder="Type your order..."
+      autocomplete="off"
+      required
+    />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
