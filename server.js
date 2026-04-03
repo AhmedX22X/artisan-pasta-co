@@ -1,139 +1,150 @@
 const express = require("express");
 const path = require("path");
 require("dotenv").config();
-const nodemailer = require("nodemailer"); // ← Added here
+const nodemailer = require("nodemailer");
 const OpenAI = require("openai");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// ==========================
+// OpenAI (Groq) Client
+// ==========================
 const client = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY,
-  baseURL: "https://api.groq.com/openai/v1",
+    apiKey: process.env.GROQ_API_KEY,
+    baseURL: "https://api.groq.com/openai/v1",
 });
 
+// ==========================
+// Middleware
+// ==========================
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+// ==========================
+// Health Check
+// ==========================
+app.get("/health", (req, res) => res.status(200).json({ status: "OK" }));
+
+// ==========================
+// Serve Frontend
+// ==========================
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Chat endpoint
+// ==========================
+// CHAT ENDPOINT
+// ==========================
 app.post("/chat", async (req, res) => {
-  try {
-    const { messages } = req.body;
-
-    if (!messages || !Array.isArray(messages) || messages.length === 0) {
-      return res.status(400).json({ reply: "No messages provided." });
-    }
-
-    const completion = await client.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
-      temperature: 0.4,
-      messages: [
-        {
-          role: "system",
-          content: `
-You are an AI assistant for a pasta restaurant landing page.
-Your job is to help users choose pasta, build an order step by step, and guide them toward confirmation.
-Rules:
-- Keep replies short, clear, and natural.
-- Ask only one useful follow-up question at a time.
-- Stay focused on pasta ordering only.
-- Remember what the user already chose.
-- If the user is unsure, suggest one popular option.
-- Do not act like a general chatbot.
-- Do not write long paragraphs.
-- Do NOT confirm orders yourself.
-Available menu:
+    try {
+        const { messages } = req.body;
+        if (!messages || !Array.isArray(messages) || messages.length === 0) {
+            return res.status(400).json({ reply: "No messages provided." });
+        }
+        const completion = await client.chat.completions.create({
+            model: "llama-3.3-70b-versatile",
+            temperature: 0.4,
+            messages: [
+                {
+                    role: "system",
+                    content: `
+You are an AI assistant for a pasta restaurant.
+Keep replies short and focused.
+Menu:
 - Pasta: spaghetti, penne, fettuccine, ravioli, lasagna
 - Sauces: alfredo, tomato, creamy, spicy
 - Add-ons: chicken, beef, cheese
-Ordering flow:
-1. Ask for pasta type if missing
-2. Ask for sauce if missing
-3. Ask for add-on if missing
-4. Ask for quantity if missing
-5. Once all details are collected, reply exactly in this format:
+Flow:
+1. Ask pasta
+2. Ask sauce
+3. Ask add-on
+4. Ask quantity
+Then reply EXACTLY:
 Order Summary:
-Pasta: [value]
-Sauce: [value]
-Add-on: [value or None]
-Quantity: [value]
+Pasta: ...
+Sauce: ...
+Add-on: ...
+Quantity: ...
 Confirm your order?
-Important:
-- Once you show the order summary, do not finalize the order in chat.
-- If the user says "yes", "confirm", "okay", or similar after the summary, reply exactly:
-Please use the confirmation button below to complete your order.
-- You do not process payments or actually place the order yourself.
-`,
-        },
-        ...messages,
-      ],
-    });
-
-    const reply = completion.choices?.[0]?.message?.content || "No reply received.";
-    res.json({ reply });
-  } catch (error) {
-    console.error("Chat error:", error?.response?.data || error.message || error);
-    res.status(500).json({ reply: "Something went wrong on the server." });
-  }
-});
-
-// Email transporter setup
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-// Email endpoint
-app.post("/send-order", async (req, res) => {
-  try {
-    const { customerEmail, customerName, customerPhone, orderDetails } = req.body;
-
-    if (!customerEmail || !orderDetails) {
-      return res.status(400).json({ success: false, message: "Missing required fields" });
+                    `,
+                },
+                ...messages,
+            ],
+        });
+        const reply = completion.choices?.[0]?.message?.content || "No reply received.";
+        res.json({ reply });
+    } catch (error) {
+        console.error("❌ Chat error:", error?.response?.data || error.message);
+        res.status(500).json({ reply: "Server is waking up... try again in a few seconds ⏳" });
     }
-
-    const mailOptions = {
-      from: `"Artisan Pasta Co." <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
-      cc: customerEmail,
-      subject: `🍝 New Order from ${customerName || "Customer"}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #D9381E;">🍝 New Order Received!</h2>
-          <hr>
-          <h3>Customer Information:</h3>
-          <p><strong>Name:</strong> ${customerName || "Not provided"}</p>
-          <p><strong>Email:</strong> ${customerEmail}</p>
-          <p><strong>Phone:</strong> ${customerPhone || "Not provided"}</p>
-          <hr>
-          <h3>Order Details:</h3>
-          <pre style="background: #f5f5f5; padding: 15px; border-radius: 8px;">${orderDetails}</pre>
-          <hr>
-          <p style="color: #757575; font-size: 14px;">
-            Order received on ${new Date().toLocaleString()}
-          </p>
-          <p style="color: #D9381E; font-weight: bold;">
-            Please confirm this order with the customer.
-          </p>
-        </div>
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
-    res.json({ success: true, message: "Order email sent successfully!" });
-  } catch (error) {
-    console.error("Email error:", error);
-    res.status(500).json({ success: false, message: "Failed to send email" });
-  }
 });
 
+// ==========================
+// Email Transporter (with check)
+// ==========================
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.warn("⚠️ Email credentials missing. Order emails will not be sent.");
+}
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+    },
+});
+
+// ==========================
+// SEND ORDER
+// ==========================
+app.post("/send-order", async (req, res) => {
+    try {
+        const { customerEmail, customerName, customerPhone, orderDetails } = req.body;
+        if (!customerEmail || !orderDetails) {
+            return res.status(400).json({ success: false, message: "Missing fields" });
+        }
+        const mailOptions = {
+            from: `"Artisan Pasta" <${process.env.EMAIL_USER}>`,
+            to: process.env.EMAIL_TO || process.env.EMAIL_USER,
+            cc: customerEmail,
+            subject: `🍝 New Order from ${customerName || "Customer"}`,
+            html: `
+                <h2>New Order</h2>
+                <p><b>Name:</b> ${customerName || "N/A"}</p>
+                <p><b>Email:</b> ${customerEmail}</p>
+                <p><b>Phone:</b> ${customerPhone || "N/A"}</p>
+                <pre>${orderDetails}</pre>
+            `,
+        };
+        await transporter.sendMail(mailOptions);
+        res.json({ success: true });
+    } catch (error) {
+        console.error("❌ Email error:", error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// ==========================
+// NEWSLETTER SUBSCRIPTION
+// ==========================
+let subscribers = []; // in production, save to database
+app.post("/subscribe", (req, res) => {
+    const { email } = req.body;
+    if (!email || !email.includes("@")) {
+        return res.status(400).json({ success: false, message: "Invalid email" });
+    }
+    if (!subscribers.includes(email)) {
+        subscribers.push(email);
+        console.log(`📧 New subscriber: ${email}`);
+    }
+    res.json({ success: true, message: "Subscribed!" });
+});
+
+// ==========================
+// START SERVER
+// ==========================
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`✅ Server running on port ${PORT}`);
+    if (!process.env.GROQ_API_KEY) console.warn("⚠️ GROQ_API_KEY missing. Chatbot will fail.");
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) console.warn("⚠️ Email credentials missing.");
 });
