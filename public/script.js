@@ -517,3 +517,32 @@ function initChatbot() {
         }
     });
 }
+let orderState = {
+    step: 'pasta', // pasta, sauce, addon, quantity
+    pasta: null,
+    sauce: null,
+    addon: null,
+    quantity: 1
+};
+
+function handleUserMessage(msg) {
+    // Use simple regex or keyword matching
+    if (orderState.step === 'pasta') {
+        orderState.pasta = msg;
+        orderState.step = 'sauce';
+        return "Great! Which sauce? (alfredo, tomato, creamy, spicy)";
+    } else if (orderState.step === 'sauce') {
+        orderState.sauce = msg;
+        orderState.step = 'addon';
+        return "Any add-ons? (chicken, beef, cheese, shrimp, or none)";
+    } else if (orderState.step === 'addon') {
+        orderState.addon = msg;
+        orderState.step = 'quantity';
+        return "How many servings? (default 1)";
+    } else if (orderState.step === 'quantity') {
+        orderState.quantity = parseInt(msg) || 1;
+        // Build summary
+        const summary = `Order Summary:\nPasta: ${orderState.pasta}\nSauce: ${orderState.sauce}\nAdd-on: ${orderState.addon}\nQuantity: ${orderState.quantity}\nConfirm your order?`;
+        return summary;
+    }
+}
